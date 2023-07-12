@@ -1,0 +1,46 @@
+.task {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-400);
+  background: var(--gray-500);
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 100%;
+  border: 2px solid var(--blue);
+  background: var(--gray-500);
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+.checkbox:hover {
+  border-color: var(--blue-dark);
+}
+
+.taskChild:last-child {
+  margin-left: auto;
+}
+
+.taskDelete {
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 5px;
+  padding: .1rem;
+  transition: 0.15s;
+}
+
+.taskDelete:hover {
+  background: var(--gray-400);
+  color: var(--danger);
+}

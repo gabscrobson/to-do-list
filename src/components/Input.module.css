@@ -1,0 +1,46 @@
+.inputForm {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 6rem;
+  gap: .5rem;
+}
+
+.inputForm input[type="text"] {
+  width: 100%;
+  padding: .8rem;
+  border: 1.4px solid var(--gray-700);
+  border-radius: .5rem;
+  background: var(--gray-500);
+  line-height: 1.4;
+  transition: 0.05s;
+  color: var(--white);
+}
+
+.inputForm input[type="text"]:focus {
+  outline: 2px solid var(--purple);
+}
+
+.inputForm button {
+  padding: .8rem;
+  background: var(--blue-dark);
+  border: 0;
+  border-radius: .5rem;
+  color: var(--white);
+  font-weight: bold;
+  line-height: 1.4;
+  transition: 0.15s;
+
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.inputForm button:hover {
+  background: var(--blue);
+  cursor: pointer;
+}
+
+.inputForm button:disabled {
+  background: var(--gray-400);
+  cursor: default;
+}
