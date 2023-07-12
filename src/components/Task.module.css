@@ -19,10 +19,20 @@
   background: var(--gray-500);
   transition: 0.15s;
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .checkbox:hover {
   border-color: var(--blue-dark);
+}
+
+.checkboxIcon {
+  color: white;
+  margin-bottom: -1.3px;
+  display: none;
 }
 
 .taskChild:last-child {
@@ -43,4 +53,23 @@
 .taskDelete:hover {
   background: var(--gray-400);
   color: var(--danger);
+}
+
+.taskCompleted {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.taskCompleted .checkbox {
+  background: var(--purple-dark);
+
+  border: 0;
+}
+
+.taskCompleted .checkbox:hover {
+  background: var(--purple);
+}
+
+.taskCompleted .checkboxIcon {
+  display: block;
 }

@@ -9,18 +9,23 @@ interface TaskListProps {
     isCompleted: boolean
   }[]
   onDeleteTask: (task: string) => void
+  onCompleteTask: (task: string) => void
 }
 
-export function TaskList({ tasks, onDeleteTask }: TaskListProps) {
+export function TaskList({ tasks, onDeleteTask, onCompleteTask }: TaskListProps) {
+
+  const totalTasksCount = tasks.length;
+  const completedTasksCount = tasks.filter(task => task.isCompleted).length;
+
   return (
     <div className={styles.taskList}>
 
       <div className={styles.taskListHeader}>
         <div className={styles.taskListHeaderCreated}>
-          <p>Tarefas criadas<span>0</span></p>
+          <p>Tarefas criadas<span>{totalTasksCount}</span></p>
         </div>
         <div className={styles.taskListHeaderCompleted}>
-          <p>Concluídas<span>0</span></p>
+          <p>Concluídas<span>{`${completedTasksCount} de ${totalTasksCount}`}</span></p>
         </div>
       </div>
 
@@ -39,6 +44,7 @@ export function TaskList({ tasks, onDeleteTask }: TaskListProps) {
               content={task.content}
               isCompleted={task.isCompleted}
               onDelete={onDeleteTask}
+              onComplete={onCompleteTask}
             />
           ))
         )}

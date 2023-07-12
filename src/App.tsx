@@ -30,13 +30,29 @@ function App() {
     setTasks(newTasks);
   }
 
+  function completeTask(task: string) {
+    const newTasks = tasks.map(taskItem => {
+      if (taskItem.content === task) {
+        taskItem.isCompleted = !taskItem.isCompleted;
+      }
+
+      return taskItem;
+    });
+
+    setTasks(newTasks);
+  }
+
   return (
     <main>
       <Header />
 
       <div className={styles.wrapper}>
         <Input onAddTask={addTask}/>
-        <TaskList tasks={tasks} onDeleteTask={deleteTask}/>
+        <TaskList 
+          tasks={tasks} 
+          onDeleteTask={deleteTask} 
+          onCompleteTask={completeTask}
+        />
       </div>
 
     </main>
