@@ -17,6 +17,11 @@
   --danger: #e25858;
 }
 
+::selection {
+  background: var(--blue);
+  color: var(--white);
+}
+
 * {
   margin: 0;
   padding: 0;
